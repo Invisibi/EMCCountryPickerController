@@ -24,4 +24,5 @@ Pod::Spec.new do |s|
   s.exclude_files = "Classes/Exclude"
   s.resources = "Resources/*.png", "Resources/*.plist"
   s.requires_arc = true
+  s.dependency 'libPhoneNumber-iOS', '~> 0.8'
 end

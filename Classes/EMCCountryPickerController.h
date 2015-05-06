@@ -10,6 +10,8 @@
 #import "EMCCountryDelegate.h"
 #import "EMCCountry.h"
 
+@class NBPhoneNumberUtil;
+
 @interface EMCCountryPickerController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
 
 - (void)chooseCountry:(EMCCountry *)chosenCountry;
@@ -22,5 +24,6 @@
 @property CGFloat flagSize;
 @property UIColor *flagBorderColor;
 @property CGFloat flagBorderWidth;
+@property (nonatomic) UIColor *countryTableTintColor;
 
 @end
