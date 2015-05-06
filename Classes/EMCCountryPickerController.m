@@ -9,6 +9,7 @@
 #import "EMCCountryPickerController.h"
 #import "UIImage+UIImage_EMCImageResize.h"
 #import "EMCCountryManager.h"
+#import "NBPhoneNumberUtil.h"
 
 #if !__has_feature(objc_arc)
 #error This class requires ARC support to be enabled.
@@ -29,6 +30,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     EMCCountry * _selectedCountry;
     NSArray *_countries;
     NSArray *_countrySearchResults;
+    NBPhoneNumberUtil *phoneNumberUtil;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -59,6 +61,8 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
 {
     [super viewDidLoad];
     
+    phoneNumberUtil = [[NBPhoneNumberUtil alloc] init];
+
     // Do any additional setup after loading the view.
     [self validateSettings];
     [self loadCountries];
@@ -145,7 +149,6 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     [countryTable setTranslatesAutoresizingMaskIntoConstraints:NO];
     countryTable.dataSource = self;
     countryTable.delegate = self;
-    [countryTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"identifier"];
     [countryTable setTintColor:self.countryTableTintColor];
 
     searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, [rootView frame].size.width, 44.f)];
@@ -157,9 +160,6 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     displayController.delegate = self;
     displayController.searchResultsDelegate = self;
     displayController.searchResultsDataSource = self;
-    
-    [[[self searchDisplayController] searchResultsTableView] registerClass:[UITableViewCell class]
-                                                    forCellReuseIdentifier:@"identifier"];
     
     if ([self searchDisplayController] == nil) NSLog(@"Search DC is nil");
     
@@ -249,7 +249,10 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"identifier"];
+    }
     
     EMCCountry *currentCountry;
     
@@ -263,6 +266,8 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     }
     
     NSString *countryCode = [currentCountry countryCode];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"+%@", [phoneNumberUtil getCountryCodeForRegion:countryCode]];
     
     if (self.countryNameDisplayLocale)
     {
