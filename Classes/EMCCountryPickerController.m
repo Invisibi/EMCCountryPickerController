@@ -115,7 +115,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [displayController setActive:NO];
+    [displayController setActive:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
