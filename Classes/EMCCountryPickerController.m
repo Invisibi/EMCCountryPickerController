@@ -62,52 +62,15 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     // Do any additional setup after loading the view.
     [self validateSettings];
     [self loadCountries];
-    
-    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
-    {
-        [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
-                                                             attribute:NSLayoutAttributeTop
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:self.topLayoutGuide
-                                                             attribute:NSLayoutAttributeBottom
-                                                            multiplier:1
-                                                              constant:0]];
-    }
-    else
-    {
-        [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
-                                                             attribute:NSLayoutAttributeTop
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:self.view
-                                                             attribute:NSLayoutAttributeTop
-                                                            multiplier:1
-                                                              constant:0]];
-    }
-    
-    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
-                                                         attribute:NSLayoutAttributeCenterX
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:rootView
-                                                         attribute:NSLayoutAttributeCenterX
-                                                        multiplier:1
-                                                          constant:0]];
-    
-    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:searchBar
-                                                         attribute:NSLayoutAttributeLeading
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:rootView
-                                                         attribute:NSLayoutAttributeLeading
-                                                        multiplier:1
-                                                          constant:0]];
-    
+
     [rootView addConstraint:[NSLayoutConstraint constraintWithItem:countryTable
                                                          attribute:NSLayoutAttributeTop
                                                          relatedBy:NSLayoutRelationEqual
-                                                            toItem:searchBar
-                                                         attribute:NSLayoutAttributeBottom
+                                                            toItem:rootView
+                                                         attribute:NSLayoutAttributeTop
                                                         multiplier:1
                                                           constant:0]];
-    
+
     [rootView addConstraint:[NSLayoutConstraint constraintWithItem:rootView
                                                          attribute:NSLayoutAttributeTrailing
                                                          relatedBy:NSLayoutRelationEqual
@@ -115,7 +78,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
                                                          attribute:NSLayoutAttributeTrailing
                                                         multiplier:1
                                                           constant:0]];
-    
+
     [rootView addConstraint:[NSLayoutConstraint constraintWithItem:rootView
                                                          attribute:NSLayoutAttributeLeading
                                                          relatedBy:NSLayoutRelationEqual
@@ -184,13 +147,10 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     countryTable.delegate = self;
     [countryTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"identifier"];
     
-    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, [rootView frame].size.width, 0)];
-    [searchBar setTranslatesAutoresizingMaskIntoConstraints:NO];
+    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, [rootView frame].size.width, 44.f)];
     searchBar.delegate = self;
-    [searchBar sizeToFit];
-    
-    [rootView addSubview:searchBar];
-    
+    countryTable.tableHeaderView = searchBar;
+
     displayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar
                                                           contentsController:self];
     displayController.delegate = self;
