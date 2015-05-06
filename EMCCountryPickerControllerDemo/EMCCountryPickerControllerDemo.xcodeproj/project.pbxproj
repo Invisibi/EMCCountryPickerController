@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		359D618872D54A9FC9847FAF /* libPods-EMCCountryPickerControllerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C55D7DAD1FD8D05F104FC25 /* libPods-EMCCountryPickerControllerDemo.a */; };
 		90610D22192FA27100D69163 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 90610D21192FA27100D69163 /* README.md */; };
 		90610F18192FA69300D69163 /* AD.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610D24192FA69000D69163 /* AD.png */; };
 		90610F19192FA69300D69163 /* AD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90610D25192FA69000D69163 /* AD@2x.png */; };
@@ -539,6 +540,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E88548624FC4B6B6A6A58CE /* Pods-EMCCountryPickerControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMCCountryPickerControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-EMCCountryPickerControllerDemo/Pods-EMCCountryPickerControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		90610D21192FA27100D69163 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		90610D24192FA69000D69163 /* AD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AD.png; sourceTree = "<group>"; };
 		90610D25192FA69000D69163 /* AD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AD@2x.png"; sourceTree = "<group>"; };
@@ -1070,6 +1072,8 @@
 		90FE0BED192F999E0056E748 /* EMCCountryPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EMCCountryPickerController.m; path = ../../Classes/EMCCountryPickerController.m; sourceTree = "<group>"; };
 		90FE0BEE192F999E0056E748 /* UIImage+UIImage_EMCImageResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+UIImage_EMCImageResize.h"; path = "../../Classes/UIImage+UIImage_EMCImageResize.h"; sourceTree = "<group>"; };
 		90FE0BEF192F999E0056E748 /* UIImage+UIImage_EMCImageResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+UIImage_EMCImageResize.m"; path = "../../Classes/UIImage+UIImage_EMCImageResize.m"; sourceTree = "<group>"; };
+		9C55D7DAD1FD8D05F104FC25 /* libPods-EMCCountryPickerControllerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EMCCountryPickerControllerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7BD1E19960C2154D92DDC42 /* Pods-EMCCountryPickerControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMCCountryPickerControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EMCCountryPickerControllerDemo/Pods-EMCCountryPickerControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1080,6 +1084,7 @@
 				90FE0BB1192F99650056E748 /* CoreGraphics.framework in Frameworks */,
 				90FE0BB3192F99650056E748 /* UIKit.framework in Frameworks */,
 				90FE0BAF192F99650056E748 /* Foundation.framework in Frameworks */,
+				359D618872D54A9FC9847FAF /* libPods-EMCCountryPickerControllerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1096,6 +1101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6434A00D144E10EAB32A1628 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7BD1E19960C2154D92DDC42 /* Pods-EMCCountryPickerControllerDemo.debug.xcconfig */,
+				7E88548624FC4B6B6A6A58CE /* Pods-EMCCountryPickerControllerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		90610D23192FA69000D69163 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1613,6 +1627,7 @@
 				90FE0BAC192F99650056E748 /* Products */,
 				90610D21192FA27100D69163 /* README.md */,
 				90610D23192FA69000D69163 /* Resources */,
+				6434A00D144E10EAB32A1628 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1632,6 +1647,7 @@
 				90FE0BB0192F99650056E748 /* CoreGraphics.framework */,
 				90FE0BB2192F99650056E748 /* UIKit.framework */,
 				90FE0BD0192F99660056E748 /* XCTest.framework */,
+				9C55D7DAD1FD8D05F104FC25 /* libPods-EMCCountryPickerControllerDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1705,9 +1721,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90FE0BE0192F99660056E748 /* Build configuration list for PBXNativeTarget "EMCCountryPickerControllerDemo" */;
 			buildPhases = (
+				610E8FD939AD3F1CE8FDF92E /* Check Pods Manifest.lock */,
 				90FE0BA7192F99650056E748 /* Sources */,
 				90FE0BA8192F99650056E748 /* Frameworks */,
 				90FE0BA9192F99650056E748 /* Resources */,
+				83324693242F2E5219EA7798 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2292,6 +2310,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		610E8FD939AD3F1CE8FDF92E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		83324693242F2E5219EA7798 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EMCCountryPickerControllerDemo/Pods-EMCCountryPickerControllerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		90FE0BA7192F99650056E748 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -2435,6 +2486,7 @@
 		};
 		90FE0BE1192F99660056E748 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7BD1E19960C2154D92DDC42 /* Pods-EMCCountryPickerControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -2449,6 +2501,7 @@
 		};
 		90FE0BE2192F99660056E748 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E88548624FC4B6B6A6A58CE /* Pods-EMCCountryPickerControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -1,0 +1,13 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'EMCCountryPickerControllerDemo' do
+
+pod 'EMCCountryPickerController', :path => '../'
+
+end
+
+target 'EMCCountryPickerControllerDemoTests' do
+
+end
+
