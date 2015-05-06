@@ -160,7 +160,8 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     displayController.delegate = self;
     displayController.searchResultsDelegate = self;
     displayController.searchResultsDataSource = self;
-    
+    [displayController.searchResultsTableView setTintColor:self.countryTableTintColor];
+
     if ([self searchDisplayController] == nil) NSLog(@"Search DC is nil");
     
     [rootView addSubview:countryTable];
@@ -171,6 +172,7 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
 - (void)setCountryTableTintColor:(UIColor *)countryTableTintColor {
     _countryTableTintColor = countryTableTintColor;
     [countryTable setTintColor:self.countryTableTintColor];
+    [self.searchDisplayController.searchResultsTableView setTintColor:self.countryTableTintColor];
 }
 
 - (void)didReceiveMemoryWarning
