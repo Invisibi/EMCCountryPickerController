@@ -22,5 +22,6 @@
 @property CGFloat flagSize;
 @property UIColor *flagBorderColor;
 @property CGFloat flagBorderWidth;
+@property UIColor *countryTableTintColor;
 
 @end

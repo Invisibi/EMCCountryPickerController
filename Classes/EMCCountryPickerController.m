@@ -146,7 +146,8 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     countryTable.dataSource = self;
     countryTable.delegate = self;
     [countryTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"identifier"];
-    
+    [countryTable setTintColor:self.countryTableTintColor];
+
     searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, [rootView frame].size.width, 44.f)];
     searchBar.delegate = self;
     countryTable.tableHeaderView = searchBar;
@@ -165,6 +166,11 @@ static const CGFloat kEMCCountryCellControllerMinCellHeight = 25;
     [rootView addSubview:countryTable];
     
     self.view = rootView;
+}
+
+- (void)setCountryTableTintColor:(UIColor *)countryTableTintColor {
+    _countryTableTintColor = countryTableTintColor;
+    [countryTable setTintColor:self.countryTableTintColor];
 }
 
 - (void)didReceiveMemoryWarning
