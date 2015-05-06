@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/emcrisostomo/EMCCountryPickerController.git", :tag => "1.3.2" }
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
-  s.resources = "Resources/*.png", "Resources/*.plist"
+  s.resources = "Resources/EMCCountryPickerController.bundle"
   s.requires_arc = true
   s.dependency 'libPhoneNumber-iOS', '~> 0.8'
 end
