@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "EMCCountryPickerController"
-  s.version      = "1.4.5"
+  s.version      = "1.4.6"
   s.summary      = "EMCCountryPickerController is a view controller allowing users to choose and filter countries in a list."
   s.description  = <<-DESC
                    `EMCCountryPickerController` is a view controller that allow users to choose
